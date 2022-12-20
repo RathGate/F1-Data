@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "Formula-1";
+    src: url(../fonts/Formula1-Regular.ttf);
+}
+@font-face {
+    font-family: "Formula-1 Wide";
+    src: url(../fonts/Formula1-Wide.ttf);
+}
+
+:root {
+    --color-dark: #131313;
+    --color-red: #ff002f;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    margin: 0;
+    font-family: "Formula-1 Wide", sans-serif;
+    color: var(--color-red);
+    font-size: 60px;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--color-dark);
+}
+
+main {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
