@@ -1,0 +1,83 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    z-index: 15;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    transition: width .30s ease;
+}
+
+nav {
+    height: 100%;
+    width: 100%;
+    border-bottom: 3px solid var(--color-red);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 0 10px red;
+    background-color: var(--color-dark);
+}
+
+.nav > * {
+    max-height: 00%;
+    height: 100%;
+}
+
+.nav-logo {
+    font-family: "Formula-1";
+}
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Formula-1";
+    font-size: 14px;
+    height: 100%;
+    gap: 10px;
+}
+
+.nav-link {
+    padding: 0 20px;
+    height: 100%;
+    display: grid;
+    align-items: center;
+}
+
+.nav-link a::before {
+    position: absolute;
+    content: "";
+    bottom: -8px;
+    left: 0;
+    width: 0px;
+    height: 3px;
+    transition: all .20s ease-in-out;
+}
+
+.nav-link:hover a::before {
+    background-color: var(--color-red);
+    width: 100%;
+    transition: all .20s ease-in-out;
+}
+
+.nav-github img {
+    height: 35px;
+    transform: scale(.9);
+    opacity: .5;
+    transition: .25s ease-in-out;
+}
+.nav-github:hover img {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.current {
+    background-color: var(--color-red);
+}

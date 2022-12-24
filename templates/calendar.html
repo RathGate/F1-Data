@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>F1 DATA</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-logo">F1 DATA</div>
+            <div class="nav-links">
+                <div class="nav-link"><a href="/">ACCUEIL</a></div>
+                <div class="nav-link current"><a href="/calendrier">CALENDRIER</a></div>
+                <div class="nav-link"><a href="/equipes">EQUIPES & PILOTES</a></div>
+                <div class="nav-link"><a href="/resultats">RESULTATS</a></div>
+            </div>
+            <div class="nav-github"><img src="assets/img/github-logo.png" alt="Github Logo"></div>
+        </nav>
+    </header>
+    <main style="width: 90%; max-width: 1300px; margin: 0 auto">
+        <section class="calendar">
+            {{ range .Races }}
+            {{ $delta := .GetTime }}
+            <div class="container">
+                <div class="header">
+                    <div class="round">ROUND {{ .Id }}</div>
+                    <div class="date flex-vt-ct">
+                        <span class="days">{{ index $delta.days 0}} - {{ index $delta.days 1}}</span>
+                        <div>
+                            {{ range $key, $value := $delta.months }}
+                            <span class="month">{{ $value }}</span>
+                            {{end}}
+                        </div>
+                    </div>
+                    <div class="infos flex-vt-ct">
+                        <span class="title">{{ .Name }}</span>
+                        <span class="details">{{.Circuit.Name}}</span>
+                        <span class="details upper">{{.Circuit.Location.Locality}} - <span>{{.Circuit.Location.Country }}</span></span>
+                    </div>
+                    <div class="flag flex-vt-ct">
+                        <img src="../assets/img/flags/{{.RetrieveFlag}}.jpg" alt="Bahrain flag">
+                    </div>
+                </div>
+            </div>
+        {{end}}
+        </section>
+            
+    </main>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
