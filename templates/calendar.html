@@ -4,26 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="assets/css/styles.css">
     <title>F1 DATA</title>
 </head>
 <body>
     <header>
         <nav>
-            <div class="nav-logo">F1 DATA</div>
+            <div class="nav-logo">
+                <span class="icon-menu material-symbols-outlined">menu</span>
+                <span>F1 DATA</span>
+            </div>
             <div class="nav-links">
                 <div class="nav-link"><a href="/">ACCUEIL</a></div>
                 <div class="nav-link current"><a href="/calendrier">CALENDRIER</a></div>
                 <div class="nav-link"><a href="/equipes">EQUIPES & PILOTES</a></div>
                 <div class="nav-link"><a href="/resultats">RESULTATS</a></div>
             </div>
-            <div class="nav-github"><img src="assets/img/github-logo.png" alt="Github Logo"></div>
+            <div class="nav-github"><a href="https://github.com/RathGate/KOJOK-TARRAF_CORBEL_PROJET_WEB" target="_blank"><img src="assets/img/github-logo.png" alt="Github Logo"></a></div>
         </nav>
     </header>
     <main style="width: 90%; max-width: 1300px; margin: 0 auto">
         <section class="calendar">
             {{ range .Races }}
-            {{ $delta := .GetTime }}
+            {{ $delta := .GetTimeInterval }}
             <div class="container">
                 <div class="header">
                     <div class="round">ROUND {{ .Id }}</div>
@@ -44,10 +49,24 @@
                         <img src="../assets/img/flags/{{.RetrieveFlag}}.jpg" alt="Bahrain flag">
                     </div>
                 </div>
+                <div class="content" style="display: flex; justify-content: center;gap: 10%;">
+                    <div class="datetime-container">
+                        <span class="calendar-title">QUALIFICATIONS</span>
+                        <div class="datetime"><span class="date">{{formatDate .Qualifying.Date}}</span> - <span>{{formatTime .Qualifying.Time}}</span> <span class="timezone">UTC</span></div>
+                    </div>
+                    {{ if .Sprint.Date}}<div class="datetime-container">
+                        <span class="calendar-title">SPRINT RACE:</span class="calendar-title">
+                        <div class="datetime"><span class="date">{{formatDate .Sprint.Date}}</span> - <span>{{formatTime .Sprint.Time}}</span> <span class="timezone">UTC</span></div>
+                    </div>{{end}}
+                    <div class="datetime-container">
+                        <span class="calendar-title">MAIN RACE:</span class="calendar-title">
+                        <div class="datetime"><span class="date">{{formatDate .Date}}</span> - <span>{{formatTime .Time}}</span> <span class="timezone">UTC</span></div>
+                    </div>
+                </div>
+                <span class="down-arrow material-symbols-outlined">expand_more</span>
             </div>
         {{end}}
         </section>
-            
     </main>
     <script src="assets/js/script.js"></script>
 </body>

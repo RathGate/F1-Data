@@ -1,0 +1,50 @@
+{{ define "results-table" }}
+{{ $currentRound := .RaceData.Id }}
+<div>{{.SeasonData.Year}}</div>
+<select name="year-select" id="year-select">
+    <option value="2018" {{if eq .SeasonData.Year "2018"}}selected{{end}}>2018</option>
+    <option value="2019" {{if eq .SeasonData.Year "2019"}}selected{{end}}>2019</option>
+    <option value="2020" {{if eq .SeasonData.Year "2020"}}selected{{end}}>2020</option>
+    <option value="2021" {{if eq .SeasonData.Year "2021"}}selected{{end}}>2021</option>
+    <option value="2022" {{if eq .SeasonData.Year "2022"}}selected{{end}}>2022</option>
+</select>
+<select name="race-select" id="miaou2">
+    {{ range $key, $value := .SeasonData.Races }}
+    <option value="round-{{ $value.Id}}" {{if eq $value.Id $currentRound}}selected{{end}}>{{ $value.Name }}</option>
+    {{ end}}
+</select>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th>POS</th>
+            <th>NO</th>
+            <th>DRIVER</th>
+            <th>CAR</th>
+            <th>LAPS</th>
+            <th>TIME/RETIRED</th>
+            <th>PTS</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        {{ range .RaceData.Results }}
+        <tr>
+            <td>{{ .Position }}</td>
+            <td>{{ .Driver.Number }}</td>
+            <td>{{ .Driver.FirstName }} {{ .Driver.FamilyName }}</td>
+            <td>{{ .Constructor.Name }}</td>
+            <td>{{ .Laps }}</td>
+            <td>{{ if ne .Time.Time "" }}
+                    {{ .Time.Time }}
+                {{else }}
+                    {{$firstChar := index .Status 0}}
+                    {{ if ne $firstChar 43}}DNF - {{end}}{{ .Status }}
+                {{ end }}</td>
+            <td>{{ .Points }}</td>
+        </tr>
+        {{end}}
+    </tbody>
+</table>
+
+{{ end }}
