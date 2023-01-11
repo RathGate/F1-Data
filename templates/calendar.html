@@ -26,49 +26,50 @@
         </nav>
     </header>
     <main style="width: 90%; max-width: 1300px; margin: 0 auto">
-        <div id="test"style="padding: 20px 0;">
+
+        <section class="section-schedule">
             <h3>All start times below are converted to your local time (detected as <span id="tz"></span>)</h3>
-        </div>
-        <section class="calendar">
-            {{ range .Races }}
-            {{ $delta := .GetTimeInterval }}
-            <div class="container">
-                <div class="header">
-                    <div class="round">ROUND {{ .Id }}</div>
-                    <div class="date flex-vt-ct">
-                        <span class="days">{{ index $delta.days 0}} - {{ index $delta.days 1}}</span>
-                        <div>
-                            {{ range $key, $value := $delta.months }}
-                            <span class="month">{{ $value }}</span>
-                            {{end}}
+            <div class="schedule-container">
+                {{ range .Races }}
+                {{ $delta := .GetTimeInterval }}
+                <div class="schedule-item">
+                    <div class="header">
+                        <div class="round">ROUND {{ .Id }}</div>
+                        <div class="date flex-vt-ct">
+                            <span class="days">{{ index $delta.days 0}} - {{ index $delta.days 1}}</span>
+                            <div>
+                                {{ range $key, $value := $delta.months }}
+                                <span class="month">{{ $value }}</span>
+                                {{end}}
+                            </div>
+                        </div>
+                        <div class="infos flex-vt-ct">
+                            <span class="title">{{ .Name }}</span>
+                            <span class="details">{{.Circuit.Name}}</span>
+                            <span class="details upper">{{.Circuit.Location.Locality}} - <span>{{.Circuit.Location.Country }}</span></span>
+                        </div>
+                        <div class="flag flex-vt-ct">
+                            <img src="../assets/img/flags/{{.RetrieveFlag}}.jpg" alt="Bahrain flag">
                         </div>
                     </div>
-                    <div class="infos flex-vt-ct">
-                        <span class="title">{{ .Name }}</span>
-                        <span class="details">{{.Circuit.Name}}</span>
-                        <span class="details upper">{{.Circuit.Location.Locality}} - <span>{{.Circuit.Location.Country }}</span></span>
+                    <div class="content">
+                        <div class="datetime-container">
+                            <span class="calendar-title">QUALIFICATIONS</span>
+                            <div class="datetime"><span class="date">{{formatDate .Qualifying.Date}}</span> - <span class="time">{{formatTime .Qualifying.Time}}</span></div>
+                        </div>
+                        {{ if .Sprint.Date}}<div class="datetime-container">
+                            <span class="calendar-title">SPRINT RACE:</span class="calendar-title">
+                            <div class="datetime"><span class="date">{{formatDate .Sprint.Date}}</span> - <span class="time">{{formatTime .Sprint.Time}}</span></div>
+                        </div>{{end}}
+                        <div class="datetime-container">
+                            <span class="calendar-title">MAIN RACE:</span class="calendar-title">
+                            <div class="datetime"><span class="date">{{formatDate .Date}}</span> - <span class="time">{{formatTime .Time}}</span></div>
+                        </div>
                     </div>
-                    <div class="flag flex-vt-ct">
-                        <img src="../assets/img/flags/{{.RetrieveFlag}}.jpg" alt="Bahrain flag">
-                    </div>
+                    <span class="down-arrow material-symbols-outlined">expand_more</span>
                 </div>
-                <div class="content" style="display: flex; justify-content: center;gap: 10%;">
-                    <div class="datetime-container">
-                        <span class="calendar-title">QUALIFICATIONS</span>
-                        <div class="datetime"><span class="date">{{formatDate .Qualifying.Date}}</span> - <span class="time">{{formatTime .Qualifying.Time}}</span></div>
-                    </div>
-                    {{ if .Sprint.Date}}<div class="datetime-container">
-                        <span class="calendar-title">SPRINT RACE:</span class="calendar-title">
-                        <div class="datetime"><span class="date">{{formatDate .Sprint.Date}}</span> - <span class="time">{{formatTime .Sprint.Time}}</span></div>
-                    </div>{{end}}
-                    <div class="datetime-container">
-                        <span class="calendar-title">MAIN RACE:</span class="calendar-title">
-                        <div class="datetime"><span class="date">{{formatDate .Date}}</span> - <span class="time">{{formatTime .Time}}</span></div>
-                    </div>
-                </div>
-                <span class="down-arrow material-symbols-outlined">expand_more</span>
+            {{end}}
             </div>
-        {{end}}
         </section>
     </main>
     <script src="assets/js/script.js"></script>

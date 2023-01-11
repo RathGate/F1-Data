@@ -44,21 +44,17 @@ function yearWatcher() {
         return
     }
     !$("#year-select").on("change", function() {
-        console.log(this.value)
         $.ajax({
             type: "POST",
             url: "/resultats",
             data: { "requestedYear": this.value },
-            success: function(data) {
-                console.log(data)
-            }
         })
     })
 }
 
 yearWatcher()
 
-document.querySelectorAll(".container").forEach(container => {
+document.querySelectorAll(".schedule-item").forEach(container => {
     container.addEventListener("click", function() {
             removeVisible(container)            
         container.querySelector(".content").classList.toggle("visible")
@@ -67,7 +63,7 @@ document.querySelectorAll(".container").forEach(container => {
 })
 
 function removeVisible(current) {
-    document.querySelectorAll(".container").forEach(container => {
+    document.querySelectorAll(".schedule-item").forEach(container => {
         if (container != current) {
             container.querySelector(".content").classList.remove("visible")
         }
@@ -86,12 +82,28 @@ document.querySelector(".icon-menu").addEventListener("click", function() {
 window.addEventListener("resize", function() {
     if (this.innerWidth > 950) {
         this.document.querySelector(".nav-links").classList.remove("visible")
-    }
+
+    } 
+    checkGPlength()
 })
+
+function checkGPlength() {
+    if (!$(".schedule-item").length) {
+        return
+    }
+    document.querySelectorAll(".schedule-item").forEach(item => {
+        let titleDiv = item.querySelector(".title")
+        if (window.innerWidth <= 950 && /Grand Prix/i.test(titleDiv.innerText)) {
+            titleDiv.innerText = titleDiv.innerText.replace(/Grand Prix/i, "GP")
+        } else if (window.innerWidth > 950 && /GP/i.test(titleDiv.innerText)) {
+            titleDiv.innerText = titleDiv.innerText.replace(/GP/i, "Grand Prix")
+        }
+    })
+}
 
 const MONTHS = ["JAN", "FEV", "MARS", "AVR", "MAI", "JUIN", "JUIL", "AOUT", "SEPT", "OCT", "NOV", "DEC"]
 
-if ($("#test")) {
+if ($("#test").length) {
     document.getElementById("tz").innerText = getTimezoneOffset()
 }
 
@@ -107,7 +119,6 @@ function stringToLocalTime(date, time) {
 
 function convertAllTimes(){
     document.querySelectorAll(".datetime").forEach(datetime => {
-        console.log(datetime)
         let temp = stringToLocalTime(datetime.querySelector(".date").innerText, datetime.querySelector(".time").innerText)
         editDatetime(datetime, temp)
     })
@@ -119,3 +130,4 @@ function editDatetime(datetime, date) {
 }
 
 convertAllTimes()
+checkGPlength()
