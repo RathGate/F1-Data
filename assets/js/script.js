@@ -85,8 +85,21 @@ window.addEventListener("resize", function() {
 
     } 
     checkGPlength()
+    resizeTimer()
 })
 
+function resizeTimer() {
+    if ($(".time-block").length) {
+        var blockWidth = this.innerWidth / 4 > 200 ? 200 : this.innerWidth / 4;
+        var fontSize = blockWidth * 0.6
+        var smallFontSize = blockWidth * 0.125
+        this.document.querySelectorAll(".time-block").forEach(timeBlock => {
+            timeBlock.style.fontSize = `${fontSize}px`;
+            timeBlock.querySelector(".unit").style.fontSize = `${smallFontSize}px`;
+        })
+    }
+}
+resizeTimer()
 function checkGPlength() {
     if (!$(".schedule-item").length) {
         return
@@ -101,7 +114,7 @@ function checkGPlength() {
     })
 }
 
-const MONTHS = ["JAN", "FEV", "MARS", "AVR", "MAI", "JUIN", "JUIL", "AOUT", "SEPT", "OCT", "NOV", "DEC"]
+const MONTHS = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEPT", "OCT", "NOV", "DEC"]
 
 if ($("#test").length) {
     document.getElementById("tz").innerText = getTimezoneOffset()
@@ -131,3 +144,7 @@ function editDatetime(datetime, date) {
 
 convertAllTimes()
 checkGPlength()
+
+function dynamicCountdownResize() {
+
+}

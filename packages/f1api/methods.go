@@ -15,7 +15,7 @@ func (container JsonContainer) isEmpty() bool {
 	return (len(container.JsonContent.Season.Races)) == 0
 }
 
-var months = []string{"", "JAN", "FEV", "MARS", "AVR", "MAI", "JUIN", "JUIL", "AOUT", "SEPT", "OCT", "NOV", "DEC"}
+var months = []string{"", "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEPT", "OCT", "NOV", "DEC"}
 
 func APIresponse(url string) (response JsonContainer, err error) {
 

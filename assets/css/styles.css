@@ -30,6 +30,11 @@
     box-sizing: border-box;
 }
 
+a {
+    color: white;
+    text-decoration: none;
+}
+
 h1 {
     margin: 0;
     font-family: "Formula-1 Wide", sans-serif;
@@ -60,6 +65,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .countdown-bg {
@@ -78,16 +84,38 @@ main {
     opacity: 20%;
 }
 
-.countdown {
+.countdown-container :not(.countdown-bg) {
     z-index: 5;
-    height: 50%;
+}
+
+.countdown {
+    padding-bottom: 35px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.countdown td {
+.time-block {
+    width: 25%;
+    max-width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    font-size: 120px;
+    aspect-ratio: 1;
+}
+.unit {
+    font-size: 25px;
+}
+.time-block:not(:first-child) {
+    border-left: 2px solid red;
+}
+.time-block:not(:last-child) {
+    border-right: 2px solid red;
+}
+/* .countdown td {
     width: 200px;
     padding: 0 20px 10px;
     font-size: 120px;
@@ -101,7 +129,7 @@ main {
 
 .countdown table {
     border-spacing: unset;
-}
+} */
 
 .section-info {
     height: 100%;
@@ -116,4 +144,94 @@ main {
 
 #prout {
     scroll-margin-top: 70px;
+}
+
+
+
+.start {
+    font-size: 25px;
+    background-color: transparent;
+    position: relative;
+    overflow: hidden;
+    color: #131313;
+    animation: bg-slide-in-text 2s ease-in-out;
+}
+.start::after {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    content: "";
+    top: 0;
+    left: 0;
+    background-color: white;
+    position: absolute;
+    z-index: -1;
+    animation: bg-slide-in 2s ease-in-out;
+}
+.cd-hover {
+    height: fit-content;
+    width: 100%;
+    max-width: 1000px;
+    padding: 5% 0;
+}
+
+@keyframes bg-slide-in {
+    0% {
+        transform: translateX(-100%);
+    }
+    25% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes bg-slide-in-text {
+    0% {
+        color: transparent;
+    }
+    100% {
+        color: #131313;
+    }
+}
+
+.sub-countdown {
+    gap: 20px;
+}
+.calendar-link {
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-style: italic;
+    position: relative;
+}
+
+@media screen and (max-width: 1200px) {
+
+}
+@media screen and (max-width: 950px) {
+
+}
+
+@media screen and (max-width: 770px) {
+    .start {
+        font-size: 20px;
+    }
+    .calendar-link {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .countdown {
+        padding-bottom: 30px;
+    }
+    .start {
+        font-size: 17px;
+    }
+    .calendar-link {
+        font-size: 12px;
+    }
+    .sub-countdown {
+        gap: 10px;
+    }
 }

@@ -55,7 +55,7 @@ nav {
     align-items: center;
 }
 
-.nav-link a::before {
+.nav-link a::before, .calendar-link::before {
     position: absolute;
     content: "";
     bottom: -8px;
@@ -65,7 +65,7 @@ nav {
     transition: all .20s ease-in-out;
 }
 
-.nav-link:hover a::before {
+.nav-link:hover a::before, .calendar-link:hover::before {
     background-color: var(--color-red);
     width: 100%;
     transition: all .20s ease-in-out;

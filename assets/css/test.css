@@ -69,6 +69,7 @@
     font-size: 30px;
     font-family: "Formula-1";
     transition: color .2s ease;
+    text-transform: capitalize;
 }
 .details {
     font-size: 13px;
