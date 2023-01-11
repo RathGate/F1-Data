@@ -7,9 +7,6 @@ import (
 )
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
-	// if !data_initialized {
-	// 	initData()
-	// }
 	template := template.Must(template.ParseFiles("templates/index.html"))
 	template.Execute(w, nil)
 }
@@ -24,6 +21,7 @@ func calendarHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		panic(err)
 	}
+
 	err = test.Execute(w, currentCalendar)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -31,9 +29,7 @@ func calendarHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func resultsHandler(w http.ResponseWriter, r *http.Request) {
-	// if r.Method == "GET" && !data_initialized {
-	// 	initData()
-	// }
+
 	if r.Method == "POST" {
 		w.Write([]byte("received"))
 		return
@@ -42,6 +38,7 @@ func resultsHandler(w http.ResponseWriter, r *http.Request) {
 	template := template.Must(template.ParseFiles(files...))
 	template.Execute(w, latestData)
 }
+
 func teamsHandler(w http.ResponseWriter, r *http.Request) {
 	template := template.Must(template.ParseFiles("templates/teams.html"))
 	template.Execute(w, nil)

@@ -9,7 +9,6 @@ import (
 
 const CURRENT_YEAR = 2023
 
-var data_initialized bool
 var latestData Data
 var currentCalendar f1api.Season
 

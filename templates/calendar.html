@@ -26,6 +26,9 @@
         </nav>
     </header>
     <main style="width: 90%; max-width: 1300px; margin: 0 auto">
+        <div id="test"style="padding: 20px 0;">
+            <h3>All start times below are converted to your local time (detected as <span id="tz"></span>)</h3>
+        </div>
         <section class="calendar">
             {{ range .Races }}
             {{ $delta := .GetTimeInterval }}
@@ -52,15 +55,15 @@
                 <div class="content" style="display: flex; justify-content: center;gap: 10%;">
                     <div class="datetime-container">
                         <span class="calendar-title">QUALIFICATIONS</span>
-                        <div class="datetime"><span class="date">{{formatDate .Qualifying.Date}}</span> - <span>{{formatTime .Qualifying.Time}}</span> <span class="timezone">UTC</span></div>
+                        <div class="datetime"><span class="date">{{formatDate .Qualifying.Date}}</span> - <span class="time">{{formatTime .Qualifying.Time}}</span></div>
                     </div>
                     {{ if .Sprint.Date}}<div class="datetime-container">
                         <span class="calendar-title">SPRINT RACE:</span class="calendar-title">
-                        <div class="datetime"><span class="date">{{formatDate .Sprint.Date}}</span> - <span>{{formatTime .Sprint.Time}}</span> <span class="timezone">UTC</span></div>
+                        <div class="datetime"><span class="date">{{formatDate .Sprint.Date}}</span> - <span class="time">{{formatTime .Sprint.Time}}</span></div>
                     </div>{{end}}
                     <div class="datetime-container">
                         <span class="calendar-title">MAIN RACE:</span class="calendar-title">
-                        <div class="datetime"><span class="date">{{formatDate .Date}}</span> - <span>{{formatTime .Time}}</span> <span class="timezone">UTC</span></div>
+                        <div class="datetime"><span class="date">{{formatDate .Date}}</span> - <span class="time">{{formatTime .Time}}</span></div>
                     </div>
                 </div>
                 <span class="down-arrow material-symbols-outlined">expand_more</span>

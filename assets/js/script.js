@@ -1,4 +1,5 @@
 const date = new Date(Date.UTC(2023, 0, 15, 23, 0, 0))
+const USER_TZ = getUserTimezone()
 
 function getUserTimezone() {
     return Intl.DateTimeFormat().resolvedOptions().timeZone
@@ -9,7 +10,6 @@ function convertTimezone(timeUTC, timezone) {
 }
 
 var countdownDate = convertTimezone(date).getTime()
-console.log(countdownDate)
 if ($(".countdown").length) {
     var x = setInterval(function() {
         var now = new Date().getTime()
@@ -88,3 +88,34 @@ window.addEventListener("resize", function() {
         this.document.querySelector(".nav-links").classList.remove("visible")
     }
 })
+
+const MONTHS = ["JAN", "FEV", "MARS", "AVR", "MAI", "JUIN", "JUIL", "AOUT", "SEPT", "OCT", "NOV", "DEC"]
+
+if ($("#test")) {
+    document.getElementById("tz").innerText = getTimezoneOffset()
+}
+
+function getTimezoneOffset() {
+    return new Date().toLocaleTimeString('en-us',{timeZoneName:'short'}).split(' ')[2]
+}
+
+function stringToLocalTime(date, time) {
+    dateArr = date.split(" "); timeArr = time.split(":");
+    let temp_date = new Date(Date.UTC(dateArr[2], MONTHS.indexOf(dateArr[1]), dateArr[0], timeArr[0], timeArr[1], 0))
+    return convertTimezone(temp_date, USER_TZ)
+}
+
+function convertAllTimes(){
+    document.querySelectorAll(".datetime").forEach(datetime => {
+        console.log(datetime)
+        let temp = stringToLocalTime(datetime.querySelector(".date").innerText, datetime.querySelector(".time").innerText)
+        editDatetime(datetime, temp)
+    })
+}
+
+function editDatetime(datetime, date) {
+    datetime.querySelector(".date").innerText = `${checkZeros(date.getDate())} ${MONTHS[date.getMonth()]} ${date.getFullYear()}` 
+    datetime.querySelector(".time").innerText = `${checkZeros(date.getHours())}:${checkZeros(date.getMinutes())}` 
+}
+
+convertAllTimes()

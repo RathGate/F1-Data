@@ -18,8 +18,6 @@ func initData() {
 	// 	return
 	// }
 	currentCalendar.CorrectCountry()
-	data_initialized = true
-	fmt.Println("DATA INITIALIZED SUCCESSFULLY")
 }
 
 // func retrieveInitialAPIData() (err error) {

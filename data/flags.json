@@ -59,7 +59,9 @@
       "country": "Great Britain"},
       {"code": "USA",
       "nationality": "American",
-      "country": "United States of America"}
+      "country": "United States of America"}, 
+      {"code": "FRA", 
+      "nationality": "French",
+      "country": "France"}
     ]
-    
   }
