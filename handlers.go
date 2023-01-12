@@ -34,9 +34,24 @@ func resultsHandler(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("received"))
 		return
 	}
-	files := []string{"templates/results.html", "templates/_results-table.html"}
-	template := template.Must(template.ParseFiles(files...))
-	template.Execute(w, latestData)
+
+	test, err := template.New("results.html").Funcs(template.FuncMap{
+		"retrieveLast": func(arr []string) string {
+			if len(arr) == 0 {
+				return ""
+			}
+			return arr[len(arr)-1]
+		},
+	}).ParseFiles("templates/results.html")
+	if err != nil {
+		panic(err)
+	}
+
+	err = test.Execute(w, latestData)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+
 }
 
 func teamsHandler(w http.ResponseWriter, r *http.Request) {

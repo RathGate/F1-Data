@@ -26,7 +26,65 @@
         </nav>
     </header>
     <main>
-        {{ template "results-table" . }}
+        <section>
+            <div class="test">
+                <img src="assets/img/title-background.png" alt="">
+                <h1>2022 RESULTS</h1>
+                <h3>Driver & Teams standings and other data will be available soon!</h3>
+            </div>
+            
+            {{ $currentRound := .RaceData.Id }}
+
+            <div class="race-select-container">
+                {{ range $key, $value := .SeasonData.Races }}
+                {{ $delta := .GetTimeInterval }}
+                <div class="race-select-item {{if eq $currentRound $value.Id}}active{{end}}" id="round-{{ $value.Id}}">
+                    <div class="flag flex-vt-ct">
+                        <img src="../assets/img/flags/{{.RetrieveFlag}}.jpg" alt="Flag of {{ $value.Circuit.Location.Country }}">
+                    </div>        
+                    <span class="race-item-city">{{ $value.Circuit.Location.Locality }}</span>
+                    <span class="race-item-dates">{{ index $delta.days 0}}-{{ index $delta.days 1}} {{ retrieveLast $delta.months }}</span>
+            
+                </div>
+                {{ end}}
+            </div>
+            
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>POS</th>
+                        <th>NO</th>
+                        <th>DRIVER</th>
+                        <th>CAR</th>
+                        <th>LAPS</th>
+                        <th>TIME/RETIRED</th>
+                        <th>PTS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    {{ range .RaceData.Results }}
+                    <tr>
+                        <td>{{ .Position }}</td>
+                        <td>{{ .Driver.Number }}</td>
+                        <td>{{ .Driver.FirstName }} {{ .Driver.FamilyName }}</td>
+                        <td>{{ .Constructor.Name }}</td>
+                        <td>{{ .Laps }}</td>
+                        <td>{{ if ne .Time.Time "" }}
+                                {{ .Time.Time }}
+                            {{else }}
+                                {{$firstChar := index .Status 0}}
+                                {{ if ne $firstChar 43}}DNF - {{end}}{{ .Status }}
+                            {{ end }}</td>
+                        <td>{{ .Points }}</td>
+                    </tr>
+                    {{end}}
+                </tbody>
+            </table>
+            
+
+        </section>
     </main>
     <script src="assets/js/script.js"></script>
 </body>

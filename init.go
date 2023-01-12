@@ -17,7 +17,7 @@ func initData() {
 	retrieveFallbackData()
 	// 	return
 	// }
-	currentCalendar.CorrectCountry()
+
 }
 
 // func retrieveInitialAPIData() (err error) {
@@ -57,7 +57,7 @@ func retrieveFallbackData() {
 		log.Fatal(err)
 	}
 	latestData.SeasonData = temp.JsonContent.Season
-
+	latestData.SeasonData.CorrectCountry()
 	// Latest race from 2022 season:
 	temp, err = f1api.GetFallBack("lastround_2022")
 	if err != nil {
@@ -71,5 +71,6 @@ func retrieveFallbackData() {
 		log.Fatal(err)
 	}
 	currentCalendar = temp.JsonContent.Season
+	currentCalendar.CorrectCountry()
 	fmt.Println("RETRIEVED FALLBACK DATA SUCCESSFULLY.")
 }

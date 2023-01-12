@@ -1,0 +1,66 @@
+.race-select-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    overflow-x: auto;
+    margin: 30px auto;
+    width: 90%;
+    padding-bottom: 10px;
+}
+.race-select-item {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    font-size: 14px;
+    /* filter: grayscale(60%); */
+    transition: .25s ease;
+    padding: 0 20px;
+    cursor: pointer;
+}
+.race-select-item:not(.active) span {
+    opacity: 80%;
+}
+
+.race-select-item:hover span {
+    opacity: 100%;
+}
+.race-select-item:not(.active) {
+    transform: scale(95%);
+}
+.race-select-item:hover, .active {
+    transform: scale(100%);
+}
+.race-select-item .flag {
+    height: 40px;
+    margin-bottom: 8px;
+}
+.race-select-item .flag img {
+    border-radius: 5px;
+    max-height: 40px;
+    margin: auto;
+}
+.race-item-city {
+    text-transform: uppercase;
+    font-family: "Formula-1";
+    
+}
+
+.clickable {
+    cursor: pointer;
+}
+.race-select-container::-webkit-scrollbar {
+    height: 10px;
+}
+.race-select-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, .15);
+}
+.race-select-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 0, 47, 0.80)
+}
+.race-select-container::-webkit-scrollbar-thumb:hover {
+    background: var(--color-red);
+}

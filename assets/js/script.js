@@ -1,4 +1,4 @@
-const NEXT_RACE = convertTimezone(new Date(Date.UTC(2023, 0, 15, 23, 0, 0))).getTime()
+const NEXT_RACE = convertTimezone(new Date(Date.UTC(2023, 2, 5, 15, 0, 0))).getTime()
 const MONTHS = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEPT", "OCT", "NOV", "DEC"]
 const USER_TZ = getUserTimezone()
 
