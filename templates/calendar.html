@@ -25,10 +25,15 @@
             <div class="nav-github"><a href="https://github.com/RathGate/KOJOK-TARRAF_CORBEL_PROJET_WEB" target="_blank"><img src="assets/img/github-logo.png" alt="Github Logo"></a></div>
         </nav>
     </header>
-    <main style="width: 90%; max-width: 1300px; margin: 0 auto">
-
-        <section class="section-schedule">
+    <main style="max-width: 1300px; margin: 0 auto">
+        <div class="test">
+            <img src="assets/img/title-background.png" alt="">
+            <h1>2023 SCHEDULE</h1>
             <h3>All start times below are converted to your local time (detected as <span id="tz"></span>)</h3>
+        </div>
+        
+        <section style="width:90%; margin: 0 auto;" class="section-schedule">
+            
             <div class="schedule-container">
                 {{ range .Races }}
                 {{ $delta := .GetTimeInterval }}
