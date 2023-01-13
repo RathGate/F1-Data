@@ -16,10 +16,10 @@
 :root {
     --color-dark: #131313;
     --color-red: #ff002f;
-    --color-alpha-romeo: #c92d4b;
+    --color-alpha: #c92d4b;
     --color-alphatauri: #5e8faa;
     --color-alpine: #2293d1;
-    --color-aston-martin: #358c75;
+    --color-aston: #358c75;
     --color-ferrari: #f91536;
     --color-haas: #b6babd;
     --color-mclaren: #f58020;
@@ -181,7 +181,7 @@ h1 {
 @media screen and (max-width: 770px) {
     /* ?TITLES: */
     h1 {
-        font-size: 35px;
+        font-size: 32px;
     }
     /* ?COUNTDOWN */
     h3 {
@@ -224,8 +224,16 @@ h1 {
 }
 @media screen and (max-width: 580px) {
     /* ?TITLES: */
+    .main-title-container {
+        margin-bottom: 0;
+    }
     h1 {
         font-size:25px;
+        margin-top: 45px;
+    }
+    .main-title-container h3 {
+        font-size: 13px;
+        margin-bottom: 25px;
     }
     /* ?COUNTDOWN: */
     .countdown {
@@ -277,5 +285,18 @@ h1 {
     }
     .datetime {
         font-size: 12px;
+    }
+    /* ?RESULTS */
+    .race-select-container {
+        margin: 15px auto;
+    }
+    .race-select-item {
+        padding: 0 15px;
+    }
+    .race-select-item .flag {
+        height: 35px;
+    }
+    .race-select-item span {
+        font-size: 10px;
     }
 }

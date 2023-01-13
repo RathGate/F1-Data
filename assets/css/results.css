@@ -35,7 +35,7 @@
 }
 .race-select-item .flag img {
     border-radius: 5px;
-    max-height: 40px;
+    max-height: 100%;
     margin: auto;
 }
 
@@ -73,3 +73,69 @@
 }
 
 /* TODO: OTHERS */
+
+table {
+    font-style: "Formula-1";
+    font-size: 15px;
+    width: 90%;
+    margin: auto;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+thead {
+    text-align: left;
+    border-bottom: 2px solid var(--color-red);
+}
+table .team {
+    text-transform: uppercase;
+}
+th, td {
+    padding: 15px 15px;
+    overflow: hidden;
+}
+tbody tr {
+    border: 3px solid transparent;
+    border-top-width: 0;
+}
+tr {
+    cursor:default;
+    padding-left: 5px;
+    transition: border .3s ease;
+    border-radius: 20px;
+}
+tbody tr:hover {
+    border-color: var(--color-red);
+}
+.ct {
+    text-align: center;
+    width: 100px;
+}
+tr:nth-of-type(2n) {
+    background-color: rgba(255, 255, 255, .05);
+}
+.pos {
+    width: 80px;
+    padding-right: 0;
+}
+
+table .flag {
+    width: 30px;
+    aspect-ratio: 3 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+table .flag img {
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 3px;
+}
+.td-img {
+    gap: 10px;
+}
+tbody:before {
+    content:"@";
+    display:block;
+    line-height:10px;
+    text-indent:-99999px;
+}

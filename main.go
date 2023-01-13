@@ -28,7 +28,7 @@ func main() {
 	http.HandleFunc("/resultats", resultsHandler)
 	http.HandleFunc("/equipes", teamsHandler)
 	http.HandleFunc("/calendrier", calendarHandler)
-
+	fmt.Println(latestData.RaceData.Results[0].Driver.RetrieveFlag())
 	// Launches the server:
 	preferredPort := ":8080"
 	fmt.Printf("Starting server at port %v\n", preferredPort)

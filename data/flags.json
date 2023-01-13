@@ -62,6 +62,24 @@
       "country": "United States of America"}, 
       {"code": "FRA", 
       "nationality": "French",
-      "country": "France"}
+      "country": "France"}, 
+      {"code": "CHE", 
+      "nationality": "Swiss",
+      "country": "Switzerland"},
+      {"code": "CHN",
+      "nationality": "Chinese", 
+      "country": "China"},
+      {"code": "DNK",
+      "nationality": "Danish",
+      "country": "Denmark"},
+      {"code": "FIN",
+      "nationality": "Finnish",
+      "country": "Finland"},
+      {"code": "THA",
+      "nationality": "Thai",
+      "country": "Thailand"},
+      {"code": "DEU",
+      "nationality": "German",
+      "country": "Germany"}
     ]
   }

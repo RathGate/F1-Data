@@ -42,6 +42,23 @@ func (race Race) RetrieveFlag() string {
 	return "unknown"
 }
 
+func (driver Driver) RetrieveFlag() string {
+	for _, element := range Countries {
+		if driver.Nationality == element.Nationality {
+			return element.Code
+		}
+	}
+	return "unknown"
+}
+func (constructor Constructor) RetrieveFlag() string {
+	for _, element := range Countries {
+		if constructor.Nationality == element.Nationality {
+			return element.Code
+		}
+	}
+	return "unknown"
+}
+
 func (season *Season) CorrectCountry() {
 	for i := 0; i < len(season.Races); i++ {
 

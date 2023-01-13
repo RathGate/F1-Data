@@ -49,43 +49,42 @@
                 {{ end}}
             </div>
             
-            </div>
-            <table>
+            <table class="race-results">
                 <thead>
                     <tr>
-                        <th>POS</th>
-                        <th>NO</th>
+                        <th class="ct pos">POS</th>
+                        <th class="ct">NO</th>
                         <th>DRIVER</th>
                         <th>CAR</th>
-                        <th>LAPS</th>
+                        <th class="ct">LAPS</th>
                         <th>TIME/RETIRED</th>
-                        <th>PTS</th>
+                        <th class="ct">PTS</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="table-content">
                     
                     {{ range .RaceData.Results }}
                     <tr>
-                        <td>{{ .Position }}</td>
-                        <td>{{ .Driver.Number }}</td>
-                        <td>{{ .Driver.FirstName }} {{ .Driver.FamilyName }}</td>
-                        <td>{{ .Constructor.Name }}</td>
-                        <td>{{ .Laps }}</td>
+                        <td class="ct pos">{{ .Position }}</td>
+                        <td class="ct">{{ .Driver.Number }}</td>
+                        <td><div class="td-img" style="display: flex"><div class="flag"><img src="../assets/img/flags/{{.Driver.RetrieveFlag}}.jpg" alt=""></div>{{ .Driver.FirstName }} {{ .Driver.FamilyName }}</td></div>
+                        <td class="team"><divdiv class="td-img" style="display: flex"><div class="flag"><img src="../assets/img/flags/{{.Constructor.RetrieveFlag}}.jpg" alt=""></div><span class="team-name">{{ .Constructor.Name }}</span></td></div>
+                        <td class="ct">{{ .Laps }}</td>
                         <td>{{ if ne .Time.Time "" }}
                                 {{ .Time.Time }}
                             {{else }}
                                 {{$firstChar := index .Status 0}}
-                                {{ if ne $firstChar 43}}DNF - {{end}}{{ .Status }}
+                                {{ if ne $firstChar 43}}DNF - {{end}}<span class="status">{{ .Status }}</span>
                             {{ end }}</td>
-                        <td>{{ .Points }}</td>
+                        <td class="ct">{{ .Points }}</td>
                     </tr>
                     {{end}}
                 </tbody>
             </table>
-            
-
         </section>
     </main>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/results.js"></script>
+
 </body>
 </html>
