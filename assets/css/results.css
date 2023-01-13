@@ -85,6 +85,7 @@ table {
 thead {
     text-align: left;
     border-bottom: 2px solid var(--color-red);
+    font-family: "Formula-1", sans-serif;
 }
 table .team {
     text-transform: uppercase;
@@ -100,7 +101,7 @@ tbody tr {
 tr {
     cursor:default;
     padding-left: 5px;
-    transition: border .3s ease;
+    transition: border .2s ease;
     border-radius: 20px;
 }
 tbody tr:hover {
@@ -108,7 +109,7 @@ tbody tr:hover {
 }
 .ct {
     text-align: center;
-    width: 100px;
+    width: 12%;
 }
 tr:nth-of-type(2n) {
     background-color: rgba(255, 255, 255, .05);
@@ -116,6 +117,7 @@ tr:nth-of-type(2n) {
 .pos {
     width: 80px;
     padding-right: 0;
+    font-family: "Formula-1";
 }
 
 table .flag {

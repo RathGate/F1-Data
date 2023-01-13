@@ -53,12 +53,12 @@
                 <thead>
                     <tr>
                         <th class="ct pos">POS</th>
-                        <th class="ct">NO</th>
+                        <th class="ct middle-hidden">NO</th>
                         <th>DRIVER</th>
-                        <th>CAR</th>
-                        <th class="ct">LAPS</th>
+                        <th class="v-small-hidden">CAR</th>
+                        <th class="ct middle-hidden">LAPS</th>
                         <th>TIME/RETIRED</th>
-                        <th class="ct">PTS</th>
+                        <th class="ct small-hidden">PTS</th>
                     </tr>
                 </thead>
                 <tbody class="table-content">
@@ -66,17 +66,21 @@
                     {{ range .RaceData.Results }}
                     <tr>
                         <td class="ct pos">{{ .Position }}</td>
-                        <td class="ct">{{ .Driver.Number }}</td>
+                        <td class="ct middle-hidden">{{ .Driver.Number }}</td>
                         <td><div class="td-img" style="display: flex"><div class="flag"><img src="../assets/img/flags/{{.Driver.RetrieveFlag}}.jpg" alt=""></div>{{ .Driver.FirstName }} {{ .Driver.FamilyName }}</td></div>
-                        <td class="team"><divdiv class="td-img" style="display: flex"><div class="flag"><img src="../assets/img/flags/{{.Constructor.RetrieveFlag}}.jpg" alt=""></div><span class="team-name">{{ .Constructor.Name }}</span></td></div>
-                        <td class="ct">{{ .Laps }}</td>
+                        <td class="team v-small-hidden"><div class="td-img" style="display: flex"><div class="flag"><img src="../assets/img/flags/{{.Constructor.RetrieveFlag}}.jpg" alt=""></div><span class="team-name">{{ .Constructor.Name }}</span></td></div>
+                        <td class="ct middle-hidden">{{ .Laps }}</td>
                         <td>{{ if ne .Time.Time "" }}
                                 {{ .Time.Time }}
                             {{else }}
                                 {{$firstChar := index .Status 0}}
-                                {{ if ne $firstChar 43}}DNF - {{end}}<span class="status">{{ .Status }}</span>
+                                {{if ne $firstChar 43}}
+                                    <span class="DNF">DNF</span><span class="DNF-status"> - {{ .Status }}</span>
+                                {{else}}
+                                    <span class="status">{{.Status}}</span>
+                                {{end}}
                             {{ end }}</td>
-                        <td class="ct">{{ .Points }}</td>
+                        <td class="ct small-hidden">{{ .Points }}</td>
                     </tr>
                     {{end}}
                 </tbody>
