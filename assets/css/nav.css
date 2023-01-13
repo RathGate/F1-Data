@@ -1,3 +1,4 @@
+/* ?NAV CONTAINERS: */
 header {
     position: fixed;
     top: 0;
@@ -5,13 +6,6 @@ header {
     height: 70px;
     width: 100%;
     z-index: 15;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    position: relative;
-    transition: width .30s ease;
 }
 
 nav {
@@ -28,16 +22,31 @@ nav {
 }
 
 .nav > * {
-    max-height: 00%;
     height: 100%;
 }
 
+/* ?LEFT PART (logo & burger icon): */
 .nav-logo {
     font-family: "Formula-1";
     display: flex;
     gap: 20px;
     align-items: center;
 }
+
+.icon-menu {
+    display: none;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/* ?MIDDLE PART (nav links): */
+nav a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    transition: width .30s ease;
+}
+
 .nav-links {
     display: flex;
     align-items: center;
@@ -55,6 +64,11 @@ nav {
     align-items: center;
 }
 
+.current {
+    background-color: var(--color-red);
+}
+
+/* Decorations on links: */
 .nav-link a::before, .calendar-link::before {
     position: absolute;
     content: "";
@@ -71,6 +85,7 @@ nav {
     transition: all .20s ease-in-out;
 }
 
+/* ?RIGHT PART (github logo): */
 .nav-github img {
     height: 35px;
     transform: scale(.9);
@@ -80,14 +95,4 @@ nav {
 .nav-github:hover img {
     transform: scale(1);
     opacity: 1;
-}
-
-.current {
-    background-color: var(--color-red);
-}
-
-.icon-menu {
-    display: none;
-    font-size: 40px;
-    cursor: pointer;
 }

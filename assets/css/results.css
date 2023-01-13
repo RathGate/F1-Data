@@ -1,3 +1,6 @@
+/* ?UPPER PART (round select): */
+
+/* Containers: */
 .race-select-container {
     width: 100%;
     display: flex;
@@ -16,24 +19,16 @@
     justify-content: center;
     gap: 2px;
     font-size: 14px;
-    /* filter: grayscale(60%); */
     transition: .25s ease;
     padding: 0 20px;
     cursor: pointer;
 }
-.race-select-item:not(.active) span {
-    opacity: 80%;
-}
 
-.race-select-item:hover span {
-    opacity: 100%;
-}
 .race-select-item:not(.active) {
     transform: scale(95%);
 }
-.race-select-item:hover, .active {
-    transform: scale(100%);
-}
+
+/* Flags: */
 .race-select-item .flag {
     height: 40px;
     margin-bottom: 8px;
@@ -43,15 +38,27 @@
     max-height: 40px;
     margin: auto;
 }
+
+/* Data: */
 .race-item-city {
     text-transform: uppercase;
     font-family: "Formula-1";
-    
 }
 
-.clickable {
-    cursor: pointer;
+/* Hover: */
+.race-select-item:not(.active) span {
+    opacity: 80%;
 }
+
+.race-select-item:hover span {
+    opacity: 100%;
+}
+
+.race-select-item:hover, .active {
+    transform: scale(100%);
+}
+
+/* Scrollbar: */
 .race-select-container::-webkit-scrollbar {
     height: 10px;
 }
@@ -64,3 +71,5 @@
 .race-select-container::-webkit-scrollbar-thumb:hover {
     background: var(--color-red);
 }
+
+/* TODO: OTHERS */

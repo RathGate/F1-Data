@@ -1,0 +1,197 @@
+/* ?CONTAINERS: */
+.schedule-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.section-schedule {
+    max-width: 1300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+
+.schedule-item {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    position: relative;
+}
+
+/* ?ITEM HEADER */
+.flex-vt-ct {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    position: relative;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+/* lEFT PART: */
+.round {
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+    transform: rotate(270deg);
+    width: 110px;
+    transform-origin: 0 0 ;
+    opacity: 50%;
+    transition: opacity .3s ease;
+    text-align: center;
+}
+
+.header .date {
+    width: 180px;
+    flex-shrink: 0;
+    gap: 5px;
+    justify-content: center;
+    font-family: "Formula-1";
+}
+
+.days {
+    font-size: 35px;
+}
+.month, .calendar-title {
+    font-size: 20px;
+    padding: 0 4px ;
+    background-color: var(--color-red);
+    border-radius: 5px;
+    font-family: "Formula-1";
+}
+
+/* RIGHT PART: */
+.title {
+    font-weight: bold;
+    margin-bottom: 7px;
+    letter-spacing: 1px;
+    font-size: 30px;
+    font-family: "Formula-1";
+    transition: color .2s ease;
+    text-transform: capitalize;
+}
+
+.infos {
+    padding: 20px 0 20px 40px;
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+}
+
+.infos::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10%;
+    height: 80%;
+    width: 2px;
+    background-color: white;
+}
+
+.details {
+    font-size: 13px;
+    letter-spacing: 1px;
+    opacity: 85%;
+    font-family: "Formula-1";
+    font-style: italic;
+    margin-bottom: 2px;
+}
+
+.upper {
+    text-transform: uppercase;
+}
+.upper span {
+    font-weight: bold;
+    color: var(--color-red);
+}
+
+/* RIGHT PART - FLAG: */
+.header .flag {
+    margin-right: 30px;
+    width: 90px;
+    aspect-ratio: 1;
+}
+.header .flag img {
+    margin: auto;
+    max-height: 60px;
+    max-width: 90px;
+    border-radius: 5px;
+}
+
+/* ?ITEM CONTENT: */
+.content {
+    height: 0px;
+    width: 100%;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-width: 0 3px 3px;
+    overflow: hidden;
+    transition: 0.2s ease;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10%;
+    row-gap: 20px;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.schedule-item .content.visible {
+    padding: 10px 20px 20px;
+    border-color: var(--color-red);
+    border-radius: 5px;
+    border-width: 0 3px 3px;
+    height: fit-content;
+    transition: 0.2s ease;
+}
+
+.down-arrow {
+    position: absolute;
+    bottom: -25px;
+    left: calc(50% - 25px);
+    background-color: #131313;
+    font-size: 50px;
+}
+
+.calendar-title {
+    background-color: white;
+    color: #131313;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.datetime-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.datetime {
+    font-family: "Inter", sans-serif;
+}
+
+
+
+/* ?HOVER: */
+.schedule-item:hover {
+    cursor: pointer;
+}
+.schedule-item:hover .title {
+    color: var(--color-red);
+}
+.schedule-item:hover .round {
+    opacity: 1;
+}

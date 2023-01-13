@@ -37,6 +37,5 @@ function resizeTimer() {
 resizeTimer()
 
 window.addEventListener("resize", function() { 
-    shortenGPName()
     resizeTimer()
 })
