@@ -1,0 +1,46 @@
+{{ define "results-table" }}
+            <div class="results-header">
+                <span class="over">2022 SEASON - <span>ROUND {{ .RaceData.Id }}</span></span>
+                <h2><span class="gp-name">>>> {{.RaceData.Name}}</span> <div class="flag v-small-hidden"><img src="../assets/img/flags/{{.RaceData.RetrieveFlag}}.jpg"></div></h1>
+                <div class="race-info small-hidden">
+                    <div class="datetime"><span class="date">{{formatDate .RaceData.Date}}</span> - <span class="time">{{formatTime .RaceData.Time}} UTC</span></div>
+                    <span class="location">{{.RaceData.Circuit.Name}} - <span>{{.RaceData.Circuit.Location.Locality}},</span> <span>{{.RaceData.Circuit.Location.Country}}</span></span>
+                </div>    
+            </div>
+            <table class="race-results">
+                <thead>
+                    <tr>
+                        <th class="ct pos">POS</th>
+                        <th class="ct middle-hidden">NO</th>
+                        <th>DRIVER</th>
+                        <th class="v-small-hidden">CAR</th>
+                        <th class="ct middle-hidden">LAPS</th>
+                        <th>TIME<span class="v-small-hidden">/RETIRED</th>
+                        <th class="ct small-hidden">PTS</th>
+                    </tr>
+                </thead>
+                <tbody class="table-content">
+                    
+                    {{ range .RaceData.Results }}
+                    <tr>
+                        <td class="ct pos">{{ .Position }}</td>
+                        <td class="ct middle-hidden">{{ .Driver.Number }}</td>
+                        <td><div class="td-img" style="display: flex"><div class="flag"><img src="../assets/img/flags/{{.Driver.RetrieveFlag}}.jpg" alt=""></div>{{ .Driver.FirstName }} {{ .Driver.FamilyName }}</td></div>
+                        <td class="team v-small-hidden"><div class="td-img" style="display: flex"><div class="flag"><img src="../assets/img/flags/{{.Constructor.RetrieveFlag}}.jpg" alt=""></div><span class="team-name">{{ .Constructor.Name }}</span></td></div>
+                        <td class="ct middle-hidden">{{ .Laps }}</td>
+                        <td>{{ if ne .Time.Time "" }}
+                                {{ .Time.Time }}
+                            {{else }}
+                                {{$firstChar := index .Status 0}}
+                                {{if ne $firstChar 43}}
+                                    <span class="DNF">DNF</span><span class="DNF-status"> - {{ .Status }}</span>
+                                {{else}}
+                                    <span class="status">{{.Status}}</span>
+                                {{end}}
+                            {{ end }}</td>
+                        <td class="ct small-hidden">{{ .Points }}</td>
+                    </tr>
+                    {{end}}
+                </tbody>
+            </table>
+{{ end }}

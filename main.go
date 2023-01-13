@@ -11,6 +11,7 @@ const CURRENT_YEAR = 2023
 
 var latestData Data
 var currentCalendar f1api.Season
+var allRaces []f1api.Race
 
 type Data struct {
 	SeasonData f1api.Season
@@ -18,6 +19,7 @@ type Data struct {
 }
 
 func main() {
+
 	initData()
 	// Handles css files:
 	static := http.FileServer(http.Dir("assets"))
@@ -28,11 +30,12 @@ func main() {
 	http.HandleFunc("/resultats", resultsHandler)
 	http.HandleFunc("/equipes", teamsHandler)
 	http.HandleFunc("/calendrier", calendarHandler)
-	fmt.Println(latestData.RaceData.Results[0].Driver.RetrieveFlag())
+
 	// Launches the server:
 	preferredPort := ":8080"
 	fmt.Printf("Starting server at port %v\n", preferredPort)
 	if err := http.ListenAndServe(preferredPort, nil); err != nil {
 		log.Fatal(err)
 	}
+
 }

@@ -119,6 +119,9 @@ h1 {
     .race-results {
         font-size: 15px;
     }
+    #content {
+        margin-top: 40px;
+    }
 }
 @media screen and (max-width: 950px) {
     /* ?NAV: */
@@ -183,16 +186,23 @@ h1 {
     .calendar-title {
         font-size: 16px;
     }
-    .datetime {
+    .datetime-container .datetime {
         font-size: 14px;
     }
-/* ?RESULTS */
-.middle-hidden {
-    display: none;
-}
-.table-content {
-    font-size: 14px;
-}
+    /* ?RESULTS */
+    .results-header {
+        gap: 8px;
+    }
+    .middle-hidden {
+        display: none;
+    }
+    .table-content {
+        font-size: 14px;
+    }
+    #content h2 {
+        font-size: 37px;
+    }
+
 }
 
 @media screen and (max-width: 770px) {
@@ -239,6 +249,13 @@ h1 {
     }
     .table-content {
         font-size: 13px;
+    }
+    #content h2 {
+        font-size: 34px;
+    }
+
+    .results-header {
+        margin: 10px 0;
     }
 }
 @media screen and (max-width: 700px) {
@@ -307,7 +324,7 @@ h1 {
     .calendar-title {
         font-size: 14px;
     }
-    .datetime {
+    .datetime-container .datetime {
         font-size: 12px;
     }
     /* ?RESULTS */
@@ -324,9 +341,12 @@ h1 {
         font-size: 10px;
     }
     .v-small-hidden {
-        display: none;
+        display: none !important;
     }
     thead {
         font-size: 13px;
+    }
+    #content h2 {
+        font-size: 22px;
     }
 }

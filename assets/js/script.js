@@ -37,17 +37,22 @@ window.addEventListener("resize", function() {
 
 // *------------------ //
 
-//! RESULTS.HTML (technically useless so far):
-function yearWatcher() {
-    if (!$("#year-select").length) {
+// Shortens "Grand Prix" to "GP" when screen width is small, and vice-versa:
+function shortenGPName() {
+    if (!$(".gp-name").length){
         return
     }
-    !$("#year-select").on("change", function() {
-        $.ajax({
-            type: "POST",
-            url: "/resultats",
-            data: { "requestedYear": this.value },
-        })
+    console.log("hi")
+    document.querySelectorAll(".gp-name").forEach(item => {
+        if (window.innerWidth <= 950 && /Grand Prix/i.test(item.innerText)) {
+            item.innerText = item.innerText.replace(/Grand Prix/i, "GP")
+        } else if (window.innerWidth > 950 && /GP/i.test(item.innerText)) {
+            item.innerText = item.innerText.replace(/GP/i, "Grand Prix")
+        }
     })
 }
-yearWatcher()
+// Runs shortenGPName() when window is resized:
+window.addEventListener("resize", function() {
+    shortenGPName()
+})
+shortenGPName()

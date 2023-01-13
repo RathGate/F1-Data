@@ -23,23 +23,6 @@ document.querySelectorAll(".schedule-item").forEach(container => {
     })
 })
 
-// Shortens "Grand Prix" to "GP" when screen width is small, and vice-versa:
-function shortenGPName() {
-    document.querySelectorAll(".schedule-item").forEach(item => {
-        let titleDiv = item.querySelector(".title")
-        if (window.innerWidth <= 950 && /Grand Prix/i.test(titleDiv.innerText)) {
-            titleDiv.innerText = titleDiv.innerText.replace(/Grand Prix/i, "GP")
-        } else if (window.innerWidth > 950 && /GP/i.test(titleDiv.innerText)) {
-            titleDiv.innerText = titleDiv.innerText.replace(/GP/i, "Grand Prix")
-        }
-    })
-}
-// Runs shortenGPName() when window is resized:
-window.addEventListener("resize", function() {
-    shortenGPName()
-})
-shortenGPName()
-
 // Converts times from a schedule divs (UTC) to user local time:
 function stringToLocalTime(date, time) {
     dateArr = date.split(" "); timeArr = time.split(":");
