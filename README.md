@@ -6,7 +6,8 @@
 
 Project submitted for a front-end course, realised by [Malcom Kojok Tarraf ](https://github.com/KhaledTarraf) and [Marianne Corbel](https://github.com/RathGate). As it is something that interests us both, we decided to work on our own version of the [Formula 1 Official Website](https://www.formula1.com/), displaying the content and data we, as casual F1 fans, would like to easily find before and after the races.
 
-Technical documentation: HERE
+Technical documentation: [HERE (GDrive)](https://docs.google.com/document/d/1RphHnO_cOwu32hdEOIRDSWFri1YW21bF1sdot0vsidE/edit?usp=share_link)
+
 How we organised our work: [HERE (Monday)](https://drive.google.com/file/d/1lpvbXwP1t2FPQ5lWueLt15Syn36XQ-qE/view?usp=share_link) & [HERE (Trello)](https://drive.google.com/file/d/1ZZOogSOiHAmlau366zSUJhc7TAC2B2BA/view?usp=share_link)
 
 ## Technical Specifications
