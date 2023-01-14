@@ -19,6 +19,7 @@ How we organised our work: [HERE (Monday)](https://drive.google.com/file/d/1lpvb
 For now, the program does not exactly use real-time API calls due to random shutdowns and overall instability of the Ergast Database (at least in December 2022). A temporary solution has been to save the most important part of the data into static .json when the API was working - therefore, the dynamic API calls have been temporarily commented and the fallback functions using the static files are always used instead.
 
 **COMPATIBILITY:** The website has been entirely tested on the latest versions of Chrome (both mobile and desktop). Unintended behavior is not excluded in any other browser.
+
 **IOS USERS:** As of Jan. 14th 2022, browsers running on iOS do not display the time conversions properly ("NaN" errors on /calendar), we do not advise you to use these for testing until the issue has been fixed.
 
 ## How to use the program
