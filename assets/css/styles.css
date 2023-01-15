@@ -2,6 +2,7 @@
 @import url("calendar.css");
 @import url("results.css");
 @import url("index.css");
+@import url("teams.css");
 
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @font-face {
@@ -16,16 +17,16 @@
 :root {
     --color-dark: #131313;
     --color-red: #ff002f;
-    --color-alpha: #c92d4b;
-    --color-alphatauri: #5e8faa;
-    --color-alpine: #2293d1;
-    --color-aston: #358c75;
-    --color-ferrari: #f91536;
-    --color-haas: #b6babd;
-    --color-mclaren: #f58020;
-    --color-mercedes: #6cd3bf;
-    --color-red-bull: #3671c6;
-    --color-williams: #37bedd;
+    --color-alfa: #980103;
+    --color-alphatauri: #032a48;
+    --color-alpine: #101b2c;
+    --color-aston-martin: #035950;
+    --color-ferrari: #fe0104;
+    --color-haas: #ececec;
+    --color-mclaren: #ff7e07;
+    --color-mercedes: #04a09d;
+    --color-red-bull: #141960;
+    --color-williams: #041f41;
 }
 
 * {
