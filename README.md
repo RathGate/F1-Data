@@ -6,7 +6,8 @@
 
 Project submitted for a front-end course, realised by [Malcom Kojok Tarraf ](https://github.com/KhaledTarraf) and [Marianne Corbel](https://github.com/RathGate). As it is something that interests us both, we decided to work on our own version of the [Formula 1 Official Website](https://www.formula1.com/), displaying the content and data we, as casual F1 fans, would like to easily find before and after the races.
 
-Technical documentation: HERE
+Technical documentation: [HERE (GDrive)](https://docs.google.com/document/d/1RphHnO_cOwu32hdEOIRDSWFri1YW21bF1sdot0vsidE/edit?usp=share_link)
+
 How we organised our work: [HERE (Monday)](https://drive.google.com/file/d/1lpvbXwP1t2FPQ5lWueLt15Syn36XQ-qE/view?usp=share_link) & [HERE (Trello)](https://drive.google.com/file/d/1ZZOogSOiHAmlau366zSUJhc7TAC2B2BA/view?usp=share_link)
 
 ## Technical Specifications
@@ -19,6 +20,7 @@ How we organised our work: [HERE (Monday)](https://drive.google.com/file/d/1lpvb
 For now, the program does not exactly use real-time API calls due to random shutdowns and overall instability of the Ergast Database (at least in December 2022). A temporary solution has been to save the most important part of the data into static .json when the API was working - therefore, the dynamic API calls have been temporarily commented and the fallback functions using the static files are always used instead.
 
 **COMPATIBILITY:** The website has been entirely tested on the latest versions of Chrome (both mobile and desktop). Unintended behavior is not excluded in any other browser.
+
 **IOS USERS:** As of Jan. 14th 2022, browsers running on iOS do not display the time conversions properly ("NaN" errors on /calendar), we do not advise you to use these for testing until the issue has been fixed.
 
 ## How to use the program
