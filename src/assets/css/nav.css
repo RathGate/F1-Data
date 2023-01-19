@@ -43,11 +43,11 @@ nav {
 }
 
 /* ?MIDDLE PART (nav links): */
-nav a {
-    color: white;
-    text-decoration: none;
-    position: relative;
-    transition: width .30s ease;
+.nav-links a {
+    padding: 0 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .nav-links {
@@ -61,10 +61,7 @@ nav a {
 }
 
 .nav-link {
-    padding: 0 20px;
-    height: 100%;
-    display: grid;
-    align-items: center;
+    position: relative;
 }
 
 .current {
@@ -72,7 +69,7 @@ nav a {
 }
 
 /* Decorations on links: */
-.nav-link a::before, .calendar-link::before {
+.nav-link::before, .calendar-link::before {
     position: absolute;
     content: "";
     bottom: -8px;
@@ -82,7 +79,7 @@ nav a {
     transition: all .20s ease-in-out;
 }
 
-.nav-link:hover a::before, .calendar-link:hover::before {
+.nav-links a:hover .nav-link::before, .calendar-link:hover::before {
     background-color: var(--color-red);
     width: 100%;
     transition: all .20s ease-in-out;
