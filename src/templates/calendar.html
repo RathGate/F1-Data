@@ -33,9 +33,7 @@
             <h1>2023 SCHEDULE</h1>
             <p>All start times below are converted to your local time (detected as <span id="tz"></span>)</p>
         </div>
-        
         <section style="width:90%; margin: 0 auto;" class="section-schedule">
-            
             <div class="schedule-container">
                 {{ range .Races }}
                 {{ $delta := .GetTimeInterval }}

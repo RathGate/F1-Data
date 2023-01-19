@@ -34,8 +34,7 @@ function stringToLocalTime(date, time) {
 // Converts all available schedule divs to user local time:
 function convertAllTimes(){
     document.querySelectorAll(".datetime").forEach(datetime => {
-        let temp = stringToLocalTime(datetime.querySelector(".date").innerText, datetime.querySelector(".time").innerText)
-
+        let temp = stringToLocalTime(datetime.querySelector(".date").innerHTML, datetime.querySelector(".time").innerHTML)
         datetime.querySelector(".date").innerText = `${padStart(temp.getDate())} ${MONTHS[temp.getMonth()]} ${temp.getFullYear()}` 
         datetime.querySelector(".time").innerText = `${padStart(temp.getHours())}:${padStart(temp.getMinutes())}` 
     })
