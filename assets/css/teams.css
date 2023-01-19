@@ -1,19 +1,22 @@
 .team-container {
+
     width: 90%;
     margin: auto;
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     max-width: 1000px; 
-
+    gap:40px;
 }
+
 .team-item-header {
     gap: 10px;
     display: flex;
     align-items: center;
     width: 100%;
     font-family: "Formula-1 Wide";
-    font-size: 24px;
-    padding: 20px;
+    font-size: 22px;
+    padding: 15px;
     border: 5px solid transparent;
     border-bottom-width: 0;
     border-radius: 10px;
@@ -24,66 +27,6 @@
     transition: all .2s ease-in-out;
 }
 
-.alfa {
-    border-color: var(--color-alfa);
-}
-.alfa .decoration {
-    background-color: var(--color-alfa)
-}
-.alphatauri {
-    border-color: var(--color-alphatauri);
-}
-.alphatauri .decoration {
-    background-color: var(--color-alphatauri);
-}
-.alpine {
-    border-color: var(--color-alpine);
-}
-.alpine .decoration {
-    background-color: var(--color-alpine);
-}
-.aston-martin {
-    border-color: var(--color-aston-martin);
-}
-.aston-martin .decoration {
-    background-color: var(--color-aston-martin);
-}
-.ferrari {
-    border-color: var(--color-ferrari);
-}
-.ferrari .decoration {
-    background-color: var(--color-ferrari);
-}
-.haas {
-    border-color: var(--color-haas);
-}
-.haas .decoration {
-    background-color: var(--color-haas);
-}
-.mclaren {
-    border-color: var(--color-mclaren);
-}
-.mclaren .decoration {
-    background-color: var(--color-mclaren);
-}
-.mercedes {
-    border-color: var(--color-mercedes);
-}
-.mercedes .decoration {
-    background-color: var(--color-mercedes);
-}
-.red-bull {
-    border-color: var(--color-red-bull);
-}
-.red-bull .decoration {
-    background-color: var(--color-red-bull);
-}
-.williams {
-    border-color: var(--color-williams);
-}
-.williams .decoration {
-    background-color: var(--color-williams);
-}
 .team-item-header .decoration{
     content: "";
     position: absolute;
@@ -117,12 +60,8 @@
     flex-direction: column;
     padding: 20px 30px 30px;
     gap: 20px;
-    border-bottom: 3px solid rgba(255, 255, 255, 0.2);
-    transition:  0.3s ease-in-out;
-}
-.team-item:hover .team-item-content {
+    border-bottom: 3px solid white;
     border-radius: 10px;
-    border-bottom-color: white;
 }
 .data {
     width: 100%;
@@ -208,6 +147,7 @@
 .drivers-container {
     width: 100%;
     position: relative;
+    gap: 15px;
 
 }
 .driver-info {
@@ -215,7 +155,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 10px 20px;
+    padding: 10px 15px 10px 10px;
     gap: 8px;
 }
 .driver-item {
@@ -253,9 +193,6 @@
     margin-top: 8px;
 }
 .name span {
-    background-color: var(--color-mercedes);
-    color: #131313;
-    font-weight: bold;
     border-radius: 3px;
     padding: 0 4px;
     width: fit-content;
@@ -266,4 +203,7 @@
 .inf span {
     opacity: 80%;
     font-style: italic;
+}
+.constructor-country.small {
+    font-size: 15px;
 }

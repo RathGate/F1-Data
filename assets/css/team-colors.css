@@ -1,0 +1,67 @@
+.alfa {
+    border-color: var(--color-alfa);
+}
+.alfa-bg {
+    background-color: var(--color-alfa)
+}
+.alphatauri {
+    border-color: var(--color-alphatauri);
+}
+.alphatauri-bg {
+    background-color: var(--color-alphatauri);
+}
+.alpine {
+    border-color: var(--color-alpine);
+}
+.alpine-bg {
+    background-color: var(--color-alpine);
+}
+.aston {
+    border-color: var(--color-aston);
+}
+.aston-bg {
+    background-color: var(--color-aston);
+}
+.ferrari {
+    border-color: var(--color-ferrari);
+}
+.ferrari-bg {
+    background-color: var(--color-ferrari);
+    color: #131313;
+    font-weight: bold;
+}
+.haas {
+    border-color: var(--color-haas);
+}
+.haas-bg {
+    background-color: var(--color-haas);
+    color: #131313;
+    font-weight: bold;
+}
+.mclaren {
+    border-color: var(--color-mclaren);
+}
+.mclaren-bg {
+    background-color: var(--color-mclaren);
+}
+.mercedes {
+    border-color: var(--color-mercedes);
+}
+.mercedes-bg {
+    background-color: var(--color-mercedes);
+    color: #131313;
+    font-weight: bold;
+}
+.red-bull {
+    border-color: var(--color-red-bull);
+}
+.red-bull-bg {
+    background-color: var(--color-red-bull);
+    color: white;
+}
+.williams {
+    border-color: var(--color-williams);
+}
+.williams-bg {
+    background-color: var(--color-williams);
+}

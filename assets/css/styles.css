@@ -3,6 +3,7 @@
 @import url("results.css");
 @import url("index.css");
 @import url("teams.css");
+@import url("team-colors.css");
 
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @font-face {
@@ -19,8 +20,8 @@
     --color-red: #ff002f;
     --color-alfa: #980103;
     --color-alphatauri: #032a48;
-    --color-alpine: #101b2c;
-    --color-aston-martin: #035950;
+    --color-alpine: #005ca7;
+    --color-aston: #035950;
     --color-ferrari: #fe0104;
     --color-haas: #ececec;
     --color-mclaren: #ff7e07;
@@ -123,6 +124,7 @@ h1 {
     #content {
         margin-top: 40px;
     }
+
 }
 @media screen and (max-width: 950px) {
     /* ?NAV: */
@@ -203,7 +205,17 @@ h1 {
     #content h2 {
         font-size: 37px;
     }
-
+    /* ?TEAMS */
+    .driver-item {
+        height: 75px;
+    }
+    .big-hidden {
+        display: none;
+    }
+    .team-container {
+        margin-top: 40px;
+        gap: 30px;
+    }
 }
 
 @media screen and (max-width: 770px) {
@@ -257,6 +269,20 @@ h1 {
 
     .results-header {
         margin: 10px 0;
+    }
+    .team-container {
+        max-width: 600px;
+    }
+    .drivers-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .driver-item {
+        width: 100%;
+    }
+    .team-container {
+        margin-top: 30px;
+        gap: 20px;
     }
 }
 @media screen and (max-width: 700px) {
@@ -349,5 +375,31 @@ h1 {
     }
     #content h2 {
         font-size: 22px;
+    }
+    .team-container {
+        margin-top: 20px;
+    }
+    .team-item-header {
+        font-size: 15px;
+        padding: 15px 5px;
+    }
+    .team-item-content {
+        padding: 15px 5px 20px;
+        gap: 15px;
+    }
+    .driver-item {
+        height: 60px;
+    }
+    .tag {
+        font-size: 12px;
+    }
+    .team-item-content .data {
+        font-size: 13px;
+    }
+    .constructor-country .flag {
+        height: 15px;
+    }
+    .driver-info .name {
+        font-size: 14px;
     }
 }
