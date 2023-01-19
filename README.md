@@ -31,7 +31,7 @@ To clone the repository:
 
     git clone https://github.com/RathGate/KOJOK-TARRAF_CORBEL_PROJET_WEB.git
 
-Then, launch a terminal at the root of the newly cloned folder:
+Then, launch a terminal in the `/src` folder:
 
     go run .
 
