@@ -96,9 +96,10 @@ section:not(.countdown-container) {
     padding: 0 7%
 }
 
-.main-title-container h3 {
+.main-title-container p {
     font-style: italic;
     margin-bottom: 40px;
+    font-size: 18px;
 }
 
 h1 {
@@ -173,7 +174,7 @@ h1 {
     h1 {
         font-size: 38px;
     }
-    h3 {
+    .main-title-container p {
         font-size: 18px;
         margin-bottom: 25px;
     }
@@ -240,7 +241,7 @@ h1 {
         font-size: 32px;
     }
     /* ?COUNTDOWN */
-    h3 {
+    .main-title-container p {
         font-size: 16px;
     }
     .start {
@@ -312,7 +313,7 @@ h1 {
         font-size:25px;
         margin-top: 45px;
     }
-    .main-title-container h3 {
+    .main-title-container p {
         font-size: 13px;
         margin-bottom: 25px;
     }
@@ -329,7 +330,7 @@ h1 {
     .sub-countdown {
         gap: 10px;
     }
-    h3 {
+    .main-title-container p {
         margin-bottom: 20px;
     }
     /* ?CALENDAR: */

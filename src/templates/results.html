@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <meta name="description" content="Find all 2022 race results here ! Coming soon: 2023 race results, teams/drivers standings and more !">
+    <meta name="author" content="F1 DATA">
     <link rel="stylesheet" href="assets/css/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <title>F1 DATA</title>
@@ -14,7 +16,7 @@
         <nav>
             <div class="nav-logo">
                 <span class="icon-menu material-symbols-outlined">menu</span>
-                <a href="/"><img src="assets/img/logo.png" alt=""></a>
+                <a href="/"><img src="assets/img/logo.png" alt="F1Data logo"></a>
             </div>
             <div class="nav-links">
                 <a href="/"><div class="nav-link"><span>HOME</span></div></a>
@@ -28,9 +30,9 @@
     <main>
         <section>
             <div class="main-title-container">
-                <img src="assets/img/title-background.png" alt="">
+                <img src="assets/img/title-background.png" alt="Background img: George Russell's car">
                 <h1>2022 RESULTS</h1>
-                <h3>Driver & Teams standings and other data will be available soon!</h3>
+                <p>Driver & Teams standings and other data will be available soon!</p>
             </div>
             {{ $currentRound := .RaceData.Id }}
             <div class="race-select-container" id="race-select-container">
