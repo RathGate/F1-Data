@@ -1,5 +1,4 @@
 .team-container {
-
     width: 90%;
     margin: auto;
     margin-top: 50px;
@@ -22,7 +21,6 @@
     border-radius: 10px;
     position: relative;
     overflow: hidden;
-    cursor: pointer;
     z-index: 3;
     transition: all .2s ease-in-out;
 }
@@ -37,21 +35,6 @@
     width: 100%;
     z-index: -1;
 }
-.team-item:hover .decoration {
-    top: 0;
-}
-.team-item:hover .team-item-header {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
-.team-item:hover .ferrari, .team-item:hover .mercedes, .team-item:hover .haas {
-    color: #131313;
-    font-weight: bold;
-}
-/* .ferrari, .mercedes, .haas {
-    color: black;
-    font-weight: bold;
-} */
 
 .team-item-content {
     width: 100%;
@@ -69,28 +52,7 @@
 .chevron-icon {
     font-size: 45px;
 }
-.decoration {
-    position: absolute;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-    z-index: 5;
-    object-position: 50% right;
-}
-.decoration img {
-    opacity: 0;
-    transition: .5s ease-in-out;
-    position: absolute;
-    max-height: 176%;
-    top: -38%;
-    right: 30px;
 
-}
-.team-item:hover .decoration img {
-    opacity: 1;
-}
 .constructor-info {
     font-family: "Formula-1", Inter, sans-serif;
     width: fit-content;
