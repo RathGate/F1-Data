@@ -49,8 +49,18 @@ html, body {
 }
 
 main {
-    padding-top: 70px;
+    padding: 70px 0;
     min-height: 100%;
+}
+
+footer {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Formula-1";
+    opacity: .5;
+    font-size: 14px;
 }
 
 /* Countdown container must not have its width changed; */
