@@ -17,7 +17,7 @@ document.querySelectorAll(".race-select-item").forEach(element => {
             if (!element.classList.contains("active")) {
             $.ajax({
                 type: "POST",
-                url: "/resultats",
+                url: "/results",
                 data: { "requestedYear": element.id },
                 success: function(data) {
                     removeClass(".race-select-item", "active")

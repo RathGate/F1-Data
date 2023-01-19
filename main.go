@@ -27,9 +27,9 @@ func main() {
 
 	// Handles routing:
 	http.HandleFunc("/", indexHandler)
-	http.HandleFunc("/resultats", resultsHandler)
-	http.HandleFunc("/equipes", teamsHandler)
-	http.HandleFunc("/calendrier", calendarHandler)
+	http.HandleFunc("/results", resultsHandler)
+	http.HandleFunc("/teams", teamsHandler)
+	http.HandleFunc("/calendar", calendarHandler)
 
 	// Launches the server:
 	preferredPort := ":8080"
