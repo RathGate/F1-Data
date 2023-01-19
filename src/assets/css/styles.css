@@ -420,3 +420,8 @@ h1 {
         font-size: 10px;
     }
 }
+
+.rick {
+    max-width: 100%;
+    border: 3px solid #131313;
+}

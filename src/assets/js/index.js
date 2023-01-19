@@ -15,7 +15,7 @@ if ($(".countdown").length) {
     
         if (remainingTime < 0) {
             clearInterval(x);
-            document.getElementById("demo").innerHTML = "EXPIRED";
+            document.querySelector(".countdown").innerHTML = "<img src='assets/img/drivers/rick.gif' class='rick' alt='Nice try :)'>";
         }
     }, 1000);
 }
