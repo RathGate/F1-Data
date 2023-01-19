@@ -27,10 +27,13 @@ nav {
 
 /* ?LEFT PART (logo & burger icon): */
 .nav-logo {
-    font-family: "Formula-1";
     display: flex;
-    gap: 20px;
     align-items: center;
+    gap: 15px;
+}
+.nav-logo img {
+    max-height: 20px;
+    display: block;
 }
 
 .icon-menu {
