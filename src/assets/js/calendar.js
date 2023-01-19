@@ -3,8 +3,9 @@
 // Closes all open calendar items when another one is clicked:
 function removeVisibleClass(current) {
     document.querySelectorAll(".schedule-item").forEach(container => {
-        if (container != current) {
+        if (container != current && container.querySelector(".content").classList.contains("visible")) {
             container.querySelector(".content").classList.remove("visible")
+            toggleArrowDir(container)
         }
     })
 }
