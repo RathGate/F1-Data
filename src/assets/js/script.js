@@ -43,7 +43,6 @@ function shortenGPName() {
     if (!$(".gp-name").length){
         return
     }
-    console.log("hi")
     document.querySelectorAll(".gp-name").forEach(item => {
         if (window.innerWidth <= 950 && /Grand Prix/i.test(item.innerText)) {
             item.innerText = item.innerText.replace(/Grand Prix/i, "GP")
