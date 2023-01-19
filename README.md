@@ -37,7 +37,7 @@ Then, launch a terminal in the `/src` folder:
 
 **NOTE:** `go run main.go` will not work properly as the `package main` is divided into three separate files and not just contained in `main.go`.
 
-The website should be available on `localhost:8080`. In case of port collision, look for this line of code at the bottom of `./main.go` :
+The website should be available on `localhost:8080`. In case of port collision, look for this line of code at the bottom of `/src/main.go` :
 
     preferredPort :=  ":8080"
 
