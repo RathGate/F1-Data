@@ -1,10 +1,10 @@
-# Projet-Web
+# F1 Data
 
 ![Landing page of the website](https://i.postimg.cc/4yLXQK5Z/1.png)
 
 ## About
 
-Project submitted for a front-end course, realised by [Malcom Kojok Tarraf ](https://github.com/KhaledTarraf) and [Marianne Corbel](https://github.com/RathGate). As it is something that interests us both, we decided to work on our own version of the [Formula 1 Official Website](https://www.formula1.com/), displaying the content and data we, as casual F1 fans, would like to easily find before and after the races.
+Project submitted for a front-end course, realised by [Malcom Kojok Tarraf](https://github.com/KhaledTarraf) and [RathGate](https://github.com/RathGate). As it is something that interests us both, we decided to work on our own version of the [Formula 1 Official Website](https://www.formula1.com/), displaying the content and data we, as casual F1 fans, would like to easily find before and after the races.
 
 Technical documentation: [HERE (GDrive)](https://docs.google.com/document/d/1RphHnO_cOwu32hdEOIRDSWFri1YW21bF1sdot0vsidE/edit?usp=share_link)
 
@@ -27,7 +27,7 @@ For now, the website has not been hosted anywhere, though we might find a way to
 
 To clone the repository:
 
-    git clone https://github.com/RathGate/KOJOK-TARRAF_CORBEL_PROJET_WEB.git
+    git clone https://github.com/RathGate/F1-Data.git
 
 Then, launch a terminal in the `/src` folder:
 
